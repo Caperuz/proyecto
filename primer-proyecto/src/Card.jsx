@@ -19,7 +19,7 @@ precio: PropTypes.string,
 
 Card.defaultProps = {
 dias: "No hay dias",
-image: "http://www.ninbikes.com/Articulos/uploads/new-1502734805784.jpeg",
+image: "http://www.hugoromero.com.ar/filtros/imagenes/7_dias.png",
 title: "Hola mundo",
 precio: "Sin costo"
 }
