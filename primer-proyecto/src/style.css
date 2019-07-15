@@ -70,7 +70,7 @@
     -webkit-animation: fadein 1s;
     -o-animation: fadein 1s;
     box-shadow: 0 1px 3px 0 rgba(37,32,50,.3);
-    border: 3px solid #fff;
+    /* border: 3px solid #fff; */
   }
   .menu ul li a{
     text-decoration:none;
@@ -81,15 +81,38 @@
   .menu ul li a div.todos_los_textos{
     width: 221px;
     height: 72px;
-    padding-top: 18px!important;
+    padding-top: 21px;
     padding-left: 15px;
   }
   .menu ul li:hover{
-    border:3px solid #000;
+    background-color: #f9f9f9;
     border-radius: 6px;
   }
   .menu ul li.active{
       border:3px solid #0192d5;
+  }
+  .activando{
+    width: 227px;
+    margin-left: -3px;
+    height: 78px;
+    border-radius: 6px;
+    margin-top: -3px;
+    border: 3px solid #0192d5;
+    background-color: #ffffff;
+}
+  .error{
+    width: 100%;
+    height: 500px;
+    margin: auto 15px;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #f9f9f9;    
+    border-radius: 6px;
+  }
+  .error h2.titulo_pag{
+    font-weight: bold;
   }
   .galeria{
     width: 100%;

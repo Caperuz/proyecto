@@ -20,6 +20,7 @@ const cards_siete = [
 
 const CardGridSiete = () => (
     <>
+    <h2 class="titulo_pag">Los vuelos destacados en todas las estadías</h2>
         {
           cards_siete.map (c => <Card_siete_dias key={c.id} dias={c.dias} image={c.image} title={c.title} precio={c.precio} />)
         }

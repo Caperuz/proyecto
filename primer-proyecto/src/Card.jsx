@@ -1,11 +1,11 @@
 import React from "react"
 import PropTypes from 'prop-types'
-import { BrowserRouter as Router, Route, Link, NavLink, NavLinkProps } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 const Card = ({image, title, precio, dias }) => (
     <>
     <div className="card_info todos">
-        <Link to="/Banner" className="link_box">
+        <Link to="/contenido" className="link_box">
             <div className="top-container">
                 <div className="image-container">
                     <div className="image-shadow"></div>

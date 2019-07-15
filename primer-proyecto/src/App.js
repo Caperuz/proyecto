@@ -7,7 +7,7 @@ import CardsGridSiete from './CardsGridSiete';
 import CardsGridDiez from './CardsGridDiez';
 import CardsGridQuince from './CardsGridQuince';
 import Diecinueve from './Diecinueve';
-import { BrowserRouter as Router, Route, Link, NavLink, NavLinkProps } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Link, NavLink, NavLinkProps } from "react-router-dom";
 import './style.css';
 
 const App = () => (
@@ -17,12 +17,19 @@ const App = () => (
     <Menu/>
     <div className="App">
       <div className="galeria">
-        <h2 class="titulo_pag">Los vuelos destacados en todas las estadías</h2>
-        <Route path="/Todos" component={ CardsGrid } />
-        <Route path="/Siete_dias" component={ CardsGridSiete } />
-        <Route path="/Diez_dias" component={ CardsGridDiez } />
-        <Route path="/Quince_dias" component={ CardsGridQuince } />
-        <Route path="/Diecinueve_dias" component={ Diecinueve } />
+        
+        <Switch>
+          <Route exact path="/" component={ CardsGrid } />
+          <Route exact path="/Siete_dias" component={ CardsGridSiete } />
+          <Route exact path="/Diez_dias" component={ CardsGridDiez } />
+          <Route exact path="/Quince_dias" component={ CardsGridQuince } />
+          <Route exact path="/Diecinueve_dias" component={ Diecinueve } />
+          <Route component={() =>(
+            <div className="error">
+              <h2 class="titulo_pag">No se han encontrado resultados para su búsqueda</h2>
+            </div>
+          )} />
+        </Switch>
       </div>
     </div>
   </Router>

@@ -20,6 +20,7 @@ const cards_quince = [
 
 const CardGridQuince = () => (
     <>
+    <h2 class="titulo_pag">Los vuelos destacados en todas las estadías</h2>
         {
             cards_quince.map (c => <Card_quince_dias key={c.id} dias={c.dias} image={c.image} title={c.title} precio={c.precio} />)
         }

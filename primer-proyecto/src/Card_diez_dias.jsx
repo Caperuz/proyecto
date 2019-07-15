@@ -1,11 +1,11 @@
 import React from "react"
 import PropTypes from 'prop-types'
-import { BrowserRouter as Router, Route, Link, NavLink, NavLinkProps } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 const Carddiezdias = ({image, title, precio, dias }) => (
     <>
     <div className="card_info 10_dias">
-        <Link to="/Banner" className="link_box">
+        <Link to="/contenido" className="link_box">
             <div className="top-container">
                 <div className="image-container">
                     <div className="image-shadow"></div>
@@ -46,7 +46,7 @@ precio: PropTypes.string,
 Carddiezdias.defaultProps = {
 dias: "No hay dias",
 image: "",
-title: "Hola mundo",
+title: "Sin imagen",
 precio: "Sin costo"
 }
 
