@@ -1,7 +1,13 @@
 import React from 'react';
-import Menu from './Menu'
 import Banner from './Banner';
+import Menu from './Menu'
 import Menunav from './Menunav';
+
+import CardView from './CardView'
+import CardViewSiete from './CardViewSiete'
+
+
+
 import CardsGrid from './CardsGrid'
 import CardsGridSiete from './CardsGridSiete';
 import CardsGridDiez from './CardsGridDiez';
@@ -17,9 +23,20 @@ const App = () => (
     <Menu/>
     <div className="App">
       <div className="galeria">
-        
         <Switch>
           <Route exact path="/" component={ CardsGrid } />
+          
+
+
+
+
+          <Route exact path="/todos/:id" component={ CardView } />
+          <Route exact path="/sietedias/:id" component={ CardViewSiete } />
+          
+
+
+
+
           <Route exact path="/Siete_dias" component={ CardsGridSiete } />
           <Route exact path="/Diez_dias" component={ CardsGridDiez } />
           <Route exact path="/Quince_dias" component={ CardsGridQuince } />

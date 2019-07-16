@@ -2,10 +2,10 @@ import React from "react"
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom';
 
-const Card = ({image, title, precio, dias }) => (
+const Card = ({id, image, title, precio, dias }) => (
     <>
-    <div className="card_info todos">
-        <Link to="/contenido" className="link_box">
+    <div className="card_info">
+    <Link to={`/todos/${id}`} className="link_box">
             <div className="top-container">
                 <div className="image-container">
                     <div className="image-shadow"></div>
@@ -37,17 +37,17 @@ const Card = ({image, title, precio, dias }) => (
 )
 
 Card.propTypes = {
-dias: PropTypes.string,
-image: PropTypes.string,
-title: PropTypes.string,
-precio: PropTypes.string,
+    dias: PropTypes.string,
+    image: PropTypes.string,
+    title: PropTypes.string,
+    precio: PropTypes.string,
 }
 
 Card.defaultProps = {
-dias: "No hay dias",
-image: "",
-title: "Hola mundo",
-precio: "Sin costo"
+    dias: "No hay dias",
+    image: "",
+    title: "Hola mundo",
+    precio: "Sin costo"
 }
 
 export default Card

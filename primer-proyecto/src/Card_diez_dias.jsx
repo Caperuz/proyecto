@@ -2,10 +2,10 @@ import React from "react"
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom';
 
-const Carddiezdias = ({image, title, precio, dias }) => (
+const Carddiezdias = ({id, image, title, precio, dias }) => (
     <>
-    <div className="card_info 10_dias">
-        <Link to="/contenido" className="link_box">
+    <div className="card_info">
+        <Link to={`/diezdias/${id}`} className="link_box">
             <div className="top-container">
                 <div className="image-container">
                     <div className="image-shadow"></div>

@@ -1,5 +1,5 @@
-import React from "react"
-import Card from './Card'
+import React from "react";
+import PropTypes from 'prop-types';
 
 const cards_todos = [
   {
@@ -60,13 +60,29 @@ const cards_todos = [
   }
 ]
 
-const CardsGrid = () => (
-    <>
-    <h2 class="titulo_pag">Los vuelos destacados en todas las estadías</h2>
-        {
-          cards_todos.map (c => <Card key={c.id} id={c.id} dias={c.dias} image={c.image} title={c.title} precio={c.precio} />)
-        }
-    </>    
-)
+const CardView = ({ match }) => {
 
-export default CardsGrid
+    const CardActual = cards_todos.filter(c=> c.id === parseInt(match.params.id))[0] //Esto me devuelve un array
+    // En mi constante CardActual voy a guardar la posición 0 de este array nuevo que se filtre
+    // En curso actual va a estar ese objeto, en vez de imprimir curso
+
+    
+    return(
+        <div className="Container">
+            { 
+                CardActual ? ( 
+                <React.Fragment>
+                    <img src={ CardActual.image } data-precio={ CardActual.precio } alt={ CardActual.title } /> 
+                    <p>id: { CardActual.id }</p>
+                    <br/><br/>
+                    <h2 class="titulo_pag">Viaja por <strong>{ CardActual.dias }</strong> días desde <strong>$ { CardActual.precio } </strong></h2>
+                </React.Fragment>
+                ) : 
+                    <h1>El viaje no existe</h1>
+            }
+        </div>
+        )
+
+    }
+
+export default CardView;

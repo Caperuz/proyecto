@@ -14,17 +14,17 @@ const cards_siete = [
       "dias": "7 días de playa",
       "image": "http://www.hugoromero.com.ar/avantrip/imagenes/7_dias.png",
       "title": "7_dias",
-      "precio": 26.119
+      "precio": 30.119
     }
 ]
 
-const CardGridSiete = () => (
+const CardsGridSiete = () => (
     <>
     <h2 class="titulo_pag">Los vuelos destacados en todas las estadías</h2>
         {
-          cards_siete.map (c => <Card_siete_dias key={c.id} dias={c.dias} image={c.image} title={c.title} precio={c.precio} />)
+          cards_siete.map (cs => <Card_siete_dias key={cs.id} id={cs.id} dias={cs.dias} image={cs.image} title={cs.title} precio={cs.precio} />)
         }
     </>
 )
 
-export default CardGridSiete
+export default CardsGridSiete
