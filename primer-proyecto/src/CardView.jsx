@@ -1,88 +1,102 @@
 import React from "react";
-import PropTypes from 'prop-types';
 
-const cards_todos = [
+const allCards = [
   {
-    "id": 1,
-    "dias": "7 días de playa",
-    "image": "http://www.hugoromero.com.ar/avantrip/imagenes/7_dias.png",
-    "title": "7_dias",
-    "precio": 26.119
+    id:1,
+    price:26.119,
+    imgUrl:"http://www.hugoromero.com.ar/avantrip/imagenes/7_dias.png",
+    link: "http://www.hugoromero.com.ar/avantrip/",
+    scale: '',
+    stayId: '',
+    description: "7 días de playa",
   },
   {
-    "id": 2,
-    "dias": "10 días de shopping",
-    "image": "http://www.hugoromero.com.ar/avantrip/imagenes/10_dias.png",
-    "title": "10_dias",
-    "precio": 32.413
+    id:2,
+    price:26.119,
+    imgUrl:"http://www.hugoromero.com.ar/avantrip/imagenes/10_dias.png",
+    link: "http://www.hugoromero.com.ar/avantrip/",
+    scale: '',
+    stayId: '',
+    description: "10 días de shopping",
   },
   {
-    "id": 3,
-    "dias": "15 días tour",
-    "image": "http://www.hugoromero.com.ar/avantrip/imagenes/15_dias.png",
-    "title": "15_dias",
-    "precio": 40.385
+    id:3,
+    price:26.119,
+    imgUrl:"http://www.hugoromero.com.ar/avantrip/imagenes/15_dias.png",
+    link: "http://www.hugoromero.com.ar/avantrip/",
+    scale: '',
+    stayId: '',
+    description: "15 días tour",
   },
   {
-    "id": 4,
-    "dias": "19 días full",
-    "image": "http://www.hugoromero.com.ar/avantrip/imagenes/19_dias.png",
-    "title": "19_dias",
-    "precio": 50.413
+    id:4,
+    price:26.119,
+    imgUrl:"http://www.hugoromero.com.ar/avantrip/imagenes/19_dias.png",
+    link: "http://www.hugoromero.com.ar/avantrip/",
+    scale: '',
+    stayId: '',
+    description: "19 días full",
   },
   {
-    "id": 5,
-    "dias": "7 días de playa",
-    "image": "http://www.hugoromero.com.ar/avantrip/imagenes/7_dias.png",
-    "title": "7_dias",
-    "precio": 26.119
+    id:5,
+    price:26.119,
+    imgUrl:"http://www.hugoromero.com.ar/avantrip/imagenes/7_dias.png",
+    link: "http://www.hugoromero.com.ar/avantrip/",
+    scale: '',
+    stayId: '',
+    description: "7 días de playa",
   },
   {
-    "id": 6,
-    "dias": "10 días de shopping",
-    "image": "http://www.hugoromero.com.ar/avantrip/imagenes/10_dias.png",
-    "title": "10_dias",
-    "precio": 32.413
+    id:6,
+    price:26.119,
+    imgUrl:"http://www.hugoromero.com.ar/avantrip/imagenes/10_dias.png",
+    link: "http://www.hugoromero.com.ar/avantrip/",
+    scale: '',
+    stayId: '',
+    description: "10 días de shopping",
   },
   {
-    "id": 7,
-    "dias": "15 días tour",
-    "image": "http://www.hugoromero.com.ar/avantrip/imagenes/15_dias.png",
-    "title": "15_dias",
-    "precio": 40.385
+    id:7,
+    price:26.119,
+    imgUrl:"http://www.hugoromero.com.ar/avantrip/imagenes/15_dias.png",
+    link: "http://www.hugoromero.com.ar/avantrip/",
+    scale: '',
+    stayId: '',
+    description: "15 días tour",
   },
   {
-    "id": 8,
-    "dias": "19 días full",
-    "image": "http://www.hugoromero.com.ar/avantrip/imagenes/19_dias.png",
-    "title": "19_dias",
-    "precio": 50.413
+    id:8,
+    price:26.119,
+    imgUrl:"http://www.hugoromero.com.ar/avantrip/imagenes/19_dias.png",
+    link: "http://www.hugoromero.com.ar/avantrip/",
+    scale: '',
+    stayId: '',
+    description: "19 días full",
   }
 ]
 
-const CardView = ({ match }) => {
+    const CardView = ({ match }) => {
 
-    const CardActual = cards_todos.filter(c=> c.id === parseInt(match.params.id))[0] //Esto me devuelve un array
-    // En mi constante CardActual voy a guardar la posición 0 de este array nuevo que se filtre
-    // En curso actual va a estar ese objeto, en vez de imprimir curso
-
+    const CardActual = allCards.filter(c=> c.id === parseInt(match.params.id))[0] 
     
     return(
         <div className="Container">
+        <br/>
+        <p>description: { CardActual.description }</p>
+        <br/>
             { 
                 CardActual ? ( 
                 <React.Fragment>
-                    <img src={ CardActual.image } data-precio={ CardActual.precio } alt={ CardActual.title } /> 
+                    <img src={ CardActual.imgUrl } data-precio={ CardActual.price } /> 
                     <p>id: { CardActual.id }</p>
                     <br/><br/>
-                    <h2 class="titulo_pag">Viaja por <strong>{ CardActual.dias }</strong> días desde <strong>$ { CardActual.precio } </strong></h2>
+                    <h2 class="titulo_pag">Viaja por <strong>{ CardActual.description }</strong> días desde <strong>$ { CardActual.price } </strong></h2>
                 </React.Fragment>
                 ) : 
                     <h1>El viaje no existe</h1>
             }
         </div>
         )
-
     }
 
 export default CardView;

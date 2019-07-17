@@ -1,30 +1,124 @@
 import React from "react";
-import Card_siete_dias from './Card_siete_dias';
+import Card from './Card';
+import cardsAPI from './api' // Luego uso la api.js que importo... por el momento escribo aca todo el array
 
-const cards_siete = [
-    {
-      "id": 1,
-      "dias": "7 días de playa",
-      "image": "http://www.hugoromero.com.ar/avantrip/imagenes/7_dias.png",
-      "title": "7_dias",
-      "precio": 26.119
-    },
-    {
-      "id": 2,
-      "dias": "7 días de playa",
-      "image": "http://www.hugoromero.com.ar/avantrip/imagenes/7_dias.png",
-      "title": "7_dias",
-      "precio": 30.119
-    }
-]
-
-const CardsGridSiete = () => (
-    <>
-    <h2 class="titulo_pag">Los vuelos destacados en todas las estadías</h2>
+class FiltrarDias extends React.Component{
+  constructor () {
+    super ();
+    this.state = {
+      name: 'Caperuzitenz',
+      cantidaddias: '',
+    } // Iniciacion
+    
+    this.state = {
+      allCards : [
         {
-          cards_siete.map (cs => <Card_siete_dias key={cs.id} id={cs.id} dias={cs.dias} image={cs.image} title={cs.title} precio={cs.precio} />)
+          id:1,
+          price:26.119,
+          imgUrl:"http://www.hugoromero.com.ar/avantrip/imagenes/7_dias.png",
+          link: "http://www.hugoromero.com.ar/avantrip/",
+          scale: '',
+          stayId: '',
+          description: "7 días de playa",
+        },
+        {
+          id:2,
+          price:26.119,
+          imgUrl:"http://www.hugoromero.com.ar/avantrip/imagenes/10_dias.png",
+          link: "http://www.hugoromero.com.ar/avantrip/",
+          scale: '',
+          stayId: '',
+          description: "10 días de shopping",
+        },
+        {
+          id:3,
+          price:26.119,
+          imgUrl:"http://www.hugoromero.com.ar/avantrip/imagenes/15_dias.png",
+          link: "http://www.hugoromero.com.ar/avantrip/",
+          scale: '',
+          stayId: '',
+          description: "15 días tour",
+        },
+        {
+          id:4,
+          price:26.119,
+          imgUrl:"http://www.hugoromero.com.ar/avantrip/imagenes/19_dias.png",
+          link: "http://www.hugoromero.com.ar/avantrip/",
+          scale: '',
+          stayId: '',
+          description: "19 días full",
+        },
+        {
+          id:5,
+          price:26.119,
+          imgUrl:"http://www.hugoromero.com.ar/avantrip/imagenes/7_dias.png",
+          link: "http://www.hugoromero.com.ar/avantrip/",
+          scale: '',
+          stayId: '',
+          description: "7 días de playa",
+        },
+        {
+          id:6,
+          price:26.119,
+          imgUrl:"http://www.hugoromero.com.ar/avantrip/imagenes/10_dias.png",
+          link: "http://www.hugoromero.com.ar/avantrip/",
+          scale: '',
+          stayId: '',
+          description: "10 días de shopping",
+        },
+        {
+          id:7,
+          price:26.119,
+          imgUrl:"http://www.hugoromero.com.ar/avantrip/imagenes/15_dias.png",
+          link: "http://www.hugoromero.com.ar/avantrip/",
+          scale: '',
+          stayId: '',
+          description: "15 días tour",
+        },
+        {
+          id:8,
+          price:26.119,
+          imgUrl:"http://www.hugoromero.com.ar/avantrip/imagenes/19_dias.png",
+          link: "http://www.hugoromero.com.ar/avantrip/",
+          scale: '',
+          stayId: '',
+          description: "19 días full",
         }
-    </>
+      ]
+    }
+  }
+  render(){
+
+    const variable7dias = this.state.allCards.filter (user => user.description == '7 días de playa'); //Listo
+    const renderSiete = variable7dias.map (
+      (
+        RenderMap => 
+        <Card 
+              key={RenderMap.id}
+              id={RenderMap.id}
+              price={RenderMap.price}
+              imgUrl={RenderMap.imgUrl}
+              link={RenderMap.link}
+              scale={RenderMap.scale}
+              stayId={RenderMap.stayId}
+              description={RenderMap.description}
+            />
+      )
+      );
+
+    return (
+      <React.Fragment>
+        {renderSiete}
+      </React.Fragment>
+    )
+  }
+}
+/////////////// Como resultado:
+const CardsGridSiete = () => (
+  <React.Fragment>
+    <h2 class="titulo_pag">Los vuelos destacados en todas las estadías</h2>
+    <FiltrarDias />
+  </React.Fragment>
 )
 
 export default CardsGridSiete

@@ -2,14 +2,14 @@ import React from "react"
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom';
 
-const Card = ({id, image, title, precio, dias }) => (
+const Card = ({id, price, imgUrl, link, scale, stayId, description }) => (
     <>
     <div className="card_info">
-    <Link to={`/todos/${id}`} className="link_box">
+    <Link to={`/viaja/${id}`} className="link_box">
             <div className="top-container">
                 <div className="image-container">
                     <div className="image-shadow"></div>
-                    <img src={image} data-precio={precio} alt={title} />
+                    <img src={imgUrl} data-precio={price} alt={description} />
                 </div>
                 <div className="data-container">
                     <div className="subtitle-container">
@@ -17,7 +17,7 @@ const Card = ({id, image, title, precio, dias }) => (
                         <h6 className="heading__heading-h6">Directo</h6>
                     </div>
                     <div className="title-container___09e34">
-                        <h2 className="cantidad_dias">{dias}</h2>
+                        <h2 className="cantidad_dias">{description}</h2>
                     </div>
                 </div>
             </div>
@@ -25,7 +25,7 @@ const Card = ({id, image, title, precio, dias }) => (
                 <article>
                     <p>Precio desde</p>
                     <span>ARS</span>
-                    <span>{precio}</span>
+                    <span>{price}</span>
                 </article>
                 <div className="link_ver_vuelo">
                     <span>Ver vuelo</span>
@@ -37,17 +37,25 @@ const Card = ({id, image, title, precio, dias }) => (
 )
 
 Card.propTypes = {
-    dias: PropTypes.string,
-    image: PropTypes.string,
-    title: PropTypes.string,
-    precio: PropTypes.string,
+    id: PropTypes.string,
+    price: PropTypes.string,
+    imgUrl: PropTypes.string,
+    link: PropTypes.string,
+    scale: PropTypes.string,
+    stayId: PropTypes.string,
+    description: PropTypes.string,
 }
 
 Card.defaultProps = {
-    dias: "No hay dias",
-    image: "",
-    title: "Hola mundo",
-    precio: "Sin costo"
+    id: "No hay id",
+    price: "Sin costo",
+    imgUrl: "sinimagen",
+    link: "",
+    scale: "",
+    stayId: "",
+    description: "No hay dias",
 }
 
 export default Card
+
+

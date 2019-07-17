@@ -2,19 +2,12 @@ import React from "react"
 import { NavLink } from 'react-router-dom';
 
 
-
-
-
-
-
-
-
-
 const Menu = () => (
+
     <div class="menu">
             <ul>
                 <li class="todos">
-                    <NavLink to="/" exact activeClassName="activando" data-filter="todos">
+                    <NavLink to="/Todos_los_dias" exact activeClassName="activando" data-filter="todos">
                         <div class="todos_los_textos"> 
                             <div class="subtitle-textos titulo_viaja">
                                 <h6>Todas las estadias</h6>
@@ -76,4 +69,6 @@ const Menu = () => (
             </ul>
         </div>
 )
+
+
 export default Menu

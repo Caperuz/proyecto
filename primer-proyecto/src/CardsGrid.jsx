@@ -1,72 +1,123 @@
 import React from "react"
 import Card from './Card'
+import cardsAPI from './api' // Luego uso la api.js que importo... por el momento escribo aca todo el array
 
-const cards_todos = [
-  {
-    "id": 1,
-    "dias": "7 días de playa",
-    "image": "http://www.hugoromero.com.ar/avantrip/imagenes/7_dias.png",
-    "title": "7_dias",
-    "precio": 26.119
-  },
-  {
-    "id": 2,
-    "dias": "10 días de shopping",
-    "image": "http://www.hugoromero.com.ar/avantrip/imagenes/10_dias.png",
-    "title": "10_dias",
-    "precio": 32.413
-  },
-  {
-    "id": 3,
-    "dias": "15 días tour",
-    "image": "http://www.hugoromero.com.ar/avantrip/imagenes/15_dias.png",
-    "title": "15_dias",
-    "precio": 40.385
-  },
-  {
-    "id": 4,
-    "dias": "19 días full",
-    "image": "http://www.hugoromero.com.ar/avantrip/imagenes/19_dias.png",
-    "title": "19_dias",
-    "precio": 50.413
-  },
-  {
-    "id": 5,
-    "dias": "7 días de playa",
-    "image": "http://www.hugoromero.com.ar/avantrip/imagenes/7_dias.png",
-    "title": "7_dias",
-    "precio": 26.119
-  },
-  {
-    "id": 6,
-    "dias": "10 días de shopping",
-    "image": "http://www.hugoromero.com.ar/avantrip/imagenes/10_dias.png",
-    "title": "10_dias",
-    "precio": 32.413
-  },
-  {
-    "id": 7,
-    "dias": "15 días tour",
-    "image": "http://www.hugoromero.com.ar/avantrip/imagenes/15_dias.png",
-    "title": "15_dias",
-    "precio": 40.385
-  },
-  {
-    "id": 8,
-    "dias": "19 días full",
-    "image": "http://www.hugoromero.com.ar/avantrip/imagenes/19_dias.png",
-    "title": "19_dias",
-    "precio": 50.413
-  }
-]
-
-const CardsGrid = () => (
-    <>
-    <h2 class="titulo_pag">Los vuelos destacados en todas las estadías</h2>
+class FiltrarDias extends React.Component{
+  constructor () {
+    super ();
+    this.state = {
+      name: 'Caperuzitenz',
+      cantidaddias: '',
+    } // Iniciacion
+    
+    this.state = {
+      allCards : [
         {
-          cards_todos.map (c => <Card key={c.id} id={c.id} dias={c.dias} image={c.image} title={c.title} precio={c.precio} />)
+          id:1,
+          price:26.119,
+          imgUrl:"http://www.hugoromero.com.ar/avantrip/imagenes/7_dias.png",
+          link: "http://www.hugoromero.com.ar/avantrip/",
+          scale: '',
+          stayId: '',
+          description: "7 días de playa",
+        },
+        {
+          id:2,
+          price:26.119,
+          imgUrl:"http://www.hugoromero.com.ar/avantrip/imagenes/10_dias.png",
+          link: "http://www.hugoromero.com.ar/avantrip/",
+          scale: '',
+          stayId: '',
+          description: "10 días de shopping",
+        },
+        {
+          id:3,
+          price:26.119,
+          imgUrl:"http://www.hugoromero.com.ar/avantrip/imagenes/15_dias.png",
+          link: "http://www.hugoromero.com.ar/avantrip/",
+          scale: '',
+          stayId: '',
+          description: "15 días tour",
+        },
+        {
+          id:4,
+          price:26.119,
+          imgUrl:"http://www.hugoromero.com.ar/avantrip/imagenes/19_dias.png",
+          link: "http://www.hugoromero.com.ar/avantrip/",
+          scale: '',
+          stayId: '',
+          description: "19 días full",
+        },
+        {
+          id:5,
+          price:26.119,
+          imgUrl:"http://www.hugoromero.com.ar/avantrip/imagenes/7_dias.png",
+          link: "http://www.hugoromero.com.ar/avantrip/",
+          scale: '',
+          stayId: '',
+          description: "7 días de playa",
+        },
+        {
+          id:6,
+          price:26.119,
+          imgUrl:"http://www.hugoromero.com.ar/avantrip/imagenes/10_dias.png",
+          link: "http://www.hugoromero.com.ar/avantrip/",
+          scale: '',
+          stayId: '',
+          description: "10 días de shopping",
+        },
+        {
+          id:7,
+          price:26.119,
+          imgUrl:"http://www.hugoromero.com.ar/avantrip/imagenes/15_dias.png",
+          link: "http://www.hugoromero.com.ar/avantrip/",
+          scale: '',
+          stayId: '',
+          description: "15 días tour",
+        },
+        {
+          id:8,
+          price:26.119,
+          imgUrl:"http://www.hugoromero.com.ar/avantrip/imagenes/19_dias.png",
+          link: "http://www.hugoromero.com.ar/avantrip/",
+          scale: '',
+          stayId: '',
+          description: "19 días full",
         }
-    </>    
-)
+      ]
+    }
+  }
+  render(){
 
+    const variabletodos = this.state.allCards.filter (user => user); //Listo
+    const renderTodos = variabletodos.map (
+      (
+        RenderMap => 
+        <Card 
+              key={RenderMap.id}
+              id={RenderMap.id}
+              price={RenderMap.price}
+              imgUrl={RenderMap.imgUrl}
+              link={RenderMap.link}
+              scale={RenderMap.scale}
+              stayId={RenderMap.stayId}
+              description={RenderMap.description}
+            />
+      )
+      );
+
+    return (
+      <React.Fragment>
+        {renderTodos}
+      </React.Fragment>
+    )
+  }
+}
+/////////////// Como resultado:
+const CardsGrid = () => (
+  <React.Fragment>
+    <h2 class="titulo_pag">Los vuelos destacados en todas las estadías</h2>
+    <FiltrarDias />
+  </React.Fragment>
+)
 export default CardsGrid
