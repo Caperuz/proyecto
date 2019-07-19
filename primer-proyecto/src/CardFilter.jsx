@@ -2,10 +2,10 @@ import React from "react"
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom';
 //<Link to={`/viaja/${id}`} className="link_box">
-const Card = ({ id, price, imgUrl, link, scale, stayId, description }) => (
+const CardFilter = ({description, scale, price, stayId, imgUrl, id, link }) => (
     <>
     <div className="card_info">
-    <Link to={link} className="link_box" target="_blank">
+    <Link to={link} target="_blank" className="link_box">
             <div className="top-container">
                 <div className="image-container">
                     <div className="image-shadow"></div>
@@ -36,7 +36,7 @@ const Card = ({ id, price, imgUrl, link, scale, stayId, description }) => (
     </>
 )
 
-Card.propTypes = {
+CardFilter.propTypes = {
     description: PropTypes.string,
     scale: PropTypes.string,
     price: PropTypes.string,
@@ -46,7 +46,7 @@ Card.propTypes = {
     link: PropTypes.string,
 }
 
-Card.defaultProps = {
+CardFilter.defaultProps = {
     description: "No hay dias",
     scale: "",
     price: "Sin costo",
@@ -56,6 +56,6 @@ Card.defaultProps = {
     link: "",
 }
 
-export default Card
+export default CardFilter
 
 

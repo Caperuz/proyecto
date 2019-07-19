@@ -1,6 +1,5 @@
 import React from "react";
 import Card from './Card'
-import cardsAPI from './api' // Luego uso la api.js que importo... por el momento escribo aca todo el array
 
 class FiltrarDias extends React.Component{
   constructor () {
@@ -89,7 +88,7 @@ class FiltrarDias extends React.Component{
   }
   render(){
 
-    const variable15dias = this.state.allCards.filter (user => user.description == '15 días tour'); //Listo
+    const variable15dias = this.state.allCards.filter (user => user.description === '15 días tour'); //Listo
     const renderQuince = variable15dias.map (
       (
         RenderMap => 
