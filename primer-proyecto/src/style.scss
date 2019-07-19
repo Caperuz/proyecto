@@ -9,7 +9,6 @@
     background-color: #f3f3f5;
     font-family: 'Roboto', sans-serif;
   }
-  
   .App{
     margin: auto;
   }
@@ -18,9 +17,7 @@
     height:44px;
     background-color: #fff;
     display: flex;
-    /* alineacion vertical */
     align-items: center;
-    /* alineacion horizontal */
     justify-content: center;
   }
   .menu_avantrip{
@@ -47,19 +44,14 @@
   .menu ul {
     list-style: none;
     width: 100%;
-    /* display: table; */
     display: flex;
-    /* margin: 20px; */
   }
   .menu ul li:nth-child(1){
     margin-left: 0px;
   }
   .menu ul li {
-    /* display: table-cell; */
-    /* width: calc(30px); */
     flex-wrap: wrap;
     background-color: #fff;
-    /* display: flex; */
     width: 221px;
     height: 72px;
     margin-left: 23px;
@@ -70,7 +62,6 @@
     -webkit-animation: fadein 1s;
     -o-animation: fadein 1s;
     box-shadow: 0 1px 3px 0 rgba(37,32,50,.3);
-    /* border: 3px solid #fff; */
   }
   .menu ul li a{
     text-decoration:none;
@@ -137,7 +128,6 @@
     text-decoration: none;
   }
   .galeria .card_info{
-    /* width:calc(100px * 3); */
     width:277px;
     margin:15px;
     overflow:hidden;
@@ -310,9 +300,7 @@
     display: flex;
     background: linear-gradient( 90deg, #409dbe, #7fcedd, #409dbe);
     text-align: center;
-    /* alineacion vertical */
     align-items: center;
-    /* alineacion horizontal */
     justify-content: center;
   }
   .banner .titulo_pag{

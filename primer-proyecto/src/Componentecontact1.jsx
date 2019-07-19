@@ -1,10 +1,5 @@
 import React, { Component } from 'react';
 import Card from './Card';
-
-
-
-
-
 class Componentecontact2 extends Component {
     constructor (props) {
         super(props)
@@ -22,13 +17,9 @@ class Componentecontact2 extends Component {
         })
         .then(respuesta => respuesta.json())
         .then ( respuesta2 => { this.setState({ allCards: respuesta2.data.allCards }) } )
-        // .then ( respuesta2 => console.log(respuesta2) )  //la consola SI devuelve el array**********
     }
     render(){
-       // Si la URL es === customID entonces 
-       
         const allCardsvar = this.state.allCards.filter (user => user.stayId === '1');
-   //   const allCardsvar = this.state.allCards;
         const renderHome = allCardsvar.map (
             (
             RenderMap => 
@@ -50,6 +41,4 @@ class Componentecontact2 extends Component {
         )
    }
 }
-
-
-   export default Componentecontact2
+export default Componentecontact2

@@ -1,5 +1,15 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 CardsGridQuince.jsx
+CardsGridDiez.jsx
+CardsGridSiete.jsx
+CardsGrid.jsx
+CardsFilter.jsx
+Componente_m.jsx
+CardView.jsx
+CardsGridDiez.jsx
+api.js
+Api_7.jsx
+api_7.js
 # dependencies
 /node_modules
 /.pnp

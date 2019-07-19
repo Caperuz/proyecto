@@ -1,7 +1,6 @@
 import React from 'react';
 import Banner from './Banner';
 import Button from './btn_estadias_viaja';
-import CardView from './CardView';
 import Menunav from './Menunav';
 import Componentecontact from './componente_contacts';
 import Componentecontact1 from './Componentecontact1';

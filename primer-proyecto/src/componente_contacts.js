@@ -6,8 +6,8 @@ class Componentecontact extends Component {
         super(props)
         this.state = {
             allCards: []
-          }
-      }
+        }
+    }
     componentDidMount() {
         fetch('https://api.graph.cool/simple/v1/cjtk3okib547g0182680rna24', {
         method: 'POST',
@@ -18,12 +18,8 @@ class Componentecontact extends Component {
         })
         .then(respuesta => respuesta.json())
         .then ( respuesta2 => { this.setState({ allCards: respuesta2.data.allCards }) } )
-        // .then ( respuesta2 => console.log(respuesta2) )  //la consola SI devuelve el array**********
     }
     render(){
-       // Si la URL es === customID entonces 
-       
-    //    const allCardsvar = this.state.allCards.filter (user => user.stayId === '3');
       const allCardsvar = this.state.allCards;
         const renderHome = allCardsvar.map (
             (
@@ -46,4 +42,4 @@ class Componentecontact extends Component {
         )
    }
 }
-   export default Componentecontact
+export default Componentecontact

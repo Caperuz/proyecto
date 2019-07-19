@@ -1,7 +1,6 @@
 import React from "react"
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom';
-//<Link to={`/viaja/${id}`} className="link_box">
 const Card = ({ id, price, imgUrl, link, scale, stayId, description }) => (
     <>
     <div className="card_info">
@@ -35,7 +34,6 @@ const Card = ({ id, price, imgUrl, link, scale, stayId, description }) => (
     </div>
     </>
 )
-
 Card.propTypes = {
     description: PropTypes.string,
     scale: PropTypes.string,
@@ -55,7 +53,4 @@ Card.defaultProps = {
     id: "No hay id",
     link: "",
 }
-
 export default Card
-
-
