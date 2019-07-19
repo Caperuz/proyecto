@@ -1,4 +1,6 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Utilice Yarn como  administrador de dependencias.
+
+Este proyecto lo cree con Create React App
 
 ## Available Scripts
 
