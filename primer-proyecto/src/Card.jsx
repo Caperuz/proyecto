@@ -1,14 +1,13 @@
 import React from "react"
 import PropTypes from 'prop-types'
-import { Link } from 'react-router-dom';
-const Card = ({ id, price, imgUrl, link, scale, stayId, description }) => (
+const Card = ({ price, imgUrl, link, scale, stayId, description }) => (
     <>
     <div className="card_info">
-    <Link to={link} className="link_box" target="_blank">
+    <a href={link} className="link_box" rel="noopener noreferrer" target="_blank">
             <div className="top-container">
                 <div className="image-container">
                     <div className="image-shadow"></div>
-                    <img src={imgUrl} data-precio={price} alt={description} />
+                    <img src={imgUrl} data-precio={price} title={stayId} alt={description} />
                 </div>
                 <div className="data-container">
                     <div className="subtitle-container">
@@ -30,7 +29,7 @@ const Card = ({ id, price, imgUrl, link, scale, stayId, description }) => (
                     <span>Ver vuelo</span>
                 </div>
             </div>
-        </Link>
+        </a>
     </div>
     </>
 )
