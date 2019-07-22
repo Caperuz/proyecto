@@ -1,7 +1,7 @@
 import React from "react"
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 const Menunav = () => (
-    <nav className="nav_avantrip">
+    <header className="nav_avantrip">
         <div className="menu_avantrip">
             <Link to="/">
                 <figure className="figure_desktop">
@@ -12,6 +12,6 @@ const Menunav = () => (
                 </figure>
             </Link>
         </div>
-    </nav>
+    </header>
 )
 export default Menunav

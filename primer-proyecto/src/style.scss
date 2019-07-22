@@ -1,7 +1,3 @@
-@font-face {
-  font-family: 'Roboto', sans-serif;
-  src: url('https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap')
-}
 *{
     margin:0;
     padding:0;
@@ -9,11 +5,15 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box;
   }
+  @font-face {
+    font-family: 'Roboto', sans-serif;
+    src: url('https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap')
+  }
   body{
     background-color: #f3f3f5;
     font-family: 'Roboto', sans-serif;
   }
-  .App{
+  main{ 
     margin: auto;
   }
   .nav_avantrip{
@@ -82,6 +82,9 @@
   .menu ul li:hover{
     background-color: #f9f9f9;
     border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
   }
   .menu ul li.active{
       border:3px solid #0192d5;
@@ -109,7 +112,7 @@
   .error h2.titulo_pag{
     font-weight: bold;
   }
-  .galeria{
+  section{
     width: 100%;
     max-width: 1228px;
     margin:auto;
@@ -117,11 +120,11 @@
     flex-wrap: wrap;
     flex-direction:row;
   }
-  .galeria .title-img{
+  section .title-img{
     width: 100%;
     border-top:4px solid #46ABDF;
   }
-  .galeria .title-img h3{
+  section .title-img h3{
     font-size:30px;
     text-align:center;
     padding: 10px 0;
@@ -131,7 +134,7 @@
   .link_box{
     text-decoration: none;
   }
-  .galeria .card_info{
+  section .card_info{
     width:277px;
     margin:15px;
     overflow:hidden;
@@ -143,9 +146,10 @@
     -o-animation: fadein 1s;
     box-shadow: 0 1px 3px 0 rgba(37,32,50,.3);
   }
-  
-  .galeria .card_info:hover{
+  section .card_info:hover{
     outline:3px solid #000;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
     border-radius: 6px;
   }
   .top-container{
@@ -235,35 +239,23 @@
     font-size: 20px;
     padding-left: 15px;
   }
-  .galeria .card_info figure img{
+  section .card_info figure img{
     width: 100%;
     vertical-align: top;
     cursor:pointer;
     transition: all .5s ease;
   }
-  .galeria .card_info figure img:hover{
+  section .card_info figure img:hover{
     transform: scale(1.2);
-  }
-  .botonClick{
-    background-color: #022535;
-    padding: 20px;
-    text-align: center;
-    cursor: pointer;
-    color: #fff;
-    font-size: 16px;
-    border-radius: 5px;
-    border:none;
-    text-decoration: none;
-  }
-  .botonClick:hover{
-    background-color: #106288;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
   }
   .informacion{
     height: 127px;
     background-color: #fff;
     position: relative;
   }
-  
   .informacion article p {
     color:#999999;
     font-weight: bold;
@@ -314,10 +306,10 @@
     .menu ul{
         flex-wrap: wrap;
     }
-    .galeria {
+    section {
         width: 95%;
     }
-    .galeria .card_info{
+    section .card_info{
         width:95%;
         margin: 2.5% auto 2.5% auto;
     }

@@ -1,5 +1,5 @@
 import React from 'react'
-import Menu from './Menu';
+import Menu from './Menu'
 
 class Button extends React.Component {
     constructor (props) {
@@ -21,25 +21,25 @@ class Button extends React.Component {
     }
     render(){
         const allBtnvar = this.state.allStayDatas;
+        allBtnvar.sort((a, b) => a - b).reverse()
         const renderall = allBtnvar.map (
             (
-            Renderall => 
-            <Menu 
+                Renderall => 
+                <Menu 
                 key={Renderall.customId}
                 bestPrice={Renderall.bestPrice}
                 customId={Renderall.customId}
                 id={Renderall.id}
-                stayId={Renderall.stayId}
                 label={Renderall.label}
                 />
-                 ));
-        return (
-            <React.Fragment>
-                <div className="menu">
+                ));
+                return (
+                    <React.Fragment>
+                <nav className="menu">
                     <ul>
                         {renderall}
                     </ul>
-                </div>
+                </nav>
             </React.Fragment>
         )
     }
