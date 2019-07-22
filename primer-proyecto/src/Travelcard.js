@@ -28,6 +28,15 @@ class Travelcard extends Component {
         const renderallCardscuatro = allCards.filter (user => user.stayId === '4').map ( ( RenderMap => <Card key={RenderMap.id} id={RenderMap.id} price={RenderMap.price} imgUrl={RenderMap.imgUrl} link={RenderMap.link} scale={RenderMap.scale} stayId={RenderMap.stayId} description={RenderMap.description} /> ))
         return (
         <React.Fragment>
+
+        <h2 className="titulo_pag">
+            { window.location.pathname === '/' ? "Los vuelos destacados en todas las estadías" : "" }
+            { window.location.pathname === '/viaja/0' ? "Los vuelos destacados en todas las estadías" : "" }
+            { window.location.pathname === '/viaja/1' ? "Los vuelos destacados en viajes por 7 días" : "" }
+            { window.location.pathname === '/viaja/2' ? "Los vuelos destacados en viajes por 10 días" : "" }
+            { window.location.pathname === '/viaja/3' ? "Los vuelos destacados en viajes por 15 días" : "" }
+            { window.location.pathname === '/viaja/4' ? "Los vuelos destacados en viajes por 19 días" : "" }
+        </h2>    
             { window.location.pathname === '/' ? renderallCards : '' }
             { window.location.pathname === '/viaja/0' ? renderallCards : '' }
             { window.location.pathname === '/viaja/1' ? renderallCardsuno : '' }

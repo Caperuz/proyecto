@@ -6,14 +6,12 @@ import Travelcard from './Travelcard'
 import { BrowserRouter as Router, Route, Switch, } from "react-router-dom"
 import './style.scss';
 const App = () => (
-  
   <Router>
   <main>
     <Menunav/>
     <Banner/>
     <Button/>
     <section>
-      <h2 className="titulo_pag">Los vuelos destacados en todas las estadías</h2>
       <Switch>
         <Route exact path="/" component={ Travelcard } />
         <Route exact path="/viaja/:customId" component={ Travelcard } />

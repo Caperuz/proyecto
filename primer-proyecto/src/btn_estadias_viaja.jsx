@@ -34,13 +34,13 @@ class Button extends React.Component {
                 />
                 ));
                 return (
-                    <React.Fragment>
-                <nav className="menu">
-                    <ul>
-                        {renderall}
-                    </ul>
-                </nav>
-            </React.Fragment>
+        <React.Fragment>
+            <nav className="menu">
+                <ul>
+                    {renderall}
+                </ul>
+            </nav>
+        </React.Fragment>
         )
     }
 }
