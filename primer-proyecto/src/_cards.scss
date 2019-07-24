@@ -1,0 +1,199 @@
+section{
+    width: 100%;
+    max-width: 1228px;
+    margin:auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction:row;
+    .title-img{
+      width: 100%;
+      border-top:4px solid $color_celeste;
+      h3{
+        font-size:30px;
+        text-align:center;
+        padding: 10px 0;
+        color:$color_gris;
+        font-weight: 100;
+      }
+    }
+    .link_box{
+      text-decoration: none;
+    }
+    .card_info{
+      width:277px;
+      margin:15px;
+      overflow:hidden;
+      border-radius: 6px;
+      cursor: pointer;
+      animation: fadein 1s;
+      -moz-animation: fadein 1s;
+      -webkit-animation: fadein 1s;
+      -o-animation: fadein 1s;
+      box-shadow: 0 1px 3px 0 rgba(37,32,50,.3);
+      figure img{
+        width: 100%;
+        vertical-align: top;
+        cursor:pointer;
+        transition: all .5s ease;
+      }
+      figure img:hover{
+        transform: scale(1.2);
+        -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+        border-radius: 6px;
+      }
+    }
+  }
+  .card_info:hover{
+    outline:3px solid $color_negro;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+  }
+  .top-container{
+    height: auto;
+  }
+  .image-container{
+    max-height: 210px;
+    position: relative;
+    img{
+      position: absolute;
+      background-size: cover;
+      max-height: 210px;
+      min-height: 210px;
+      width: 100%;
+      border-top-left-radius: 6px;
+      border-top-right-radius: 6px;
+      z-index: 0;
+    }
+  }
+  .data-container{
+    height: 210px;
+    position: relative;
+    z-index: 1;
+    color:$color_blanco;
+    fill:$color_blanco;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 210px;
+    justify-content: flex-end;
+    box-sizing: border-box;
+    padding: 0 12px 12px;
+  }
+  .image-shadow{
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 210px;
+    background: -moz-linear-gradient(to top,$color_negro,rgba(0,0,0,.42) 31%,transparent);
+    background: -webkit-linear-gradient(0deg,$color_negro,rgba(0,0,0,.42) 31%,transparent);
+    background: linear-gradient(0deg,$color_negro,rgba(0,0,0,.42) 31%,transparent);
+  }
+  .todos_los_textos{
+    height: 30px;
+  }
+  .subtitle-container{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+    h6{
+      font-size:14px;
+      padding-left: 9px;
+    }
+  }
+  .subtitle-textos{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+    h6{
+      font-size:14px;
+      padding-left: 0px;
+    }
+  }
+  .desde_precio{
+    h6{
+      font-size: 16px;
+      color:$color_celeste;
+    }
+  } 
+  .titulo_viaja{
+    h6{
+      font-size: 12px;
+    }
+  }
+  h2.cantidad_dias {
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 30px;
+    margin: 0;
+  }
+  h2.titulo_pag{
+    font-size: 24px;
+    font-weight: 300;
+    color: $color_gris_dos;
+    display: inline-block;
+    -webkit-flex-basis: 100%;
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%;
+    font-size: 20px;
+    padding-left: 15px;
+  }
+
+  .informacion{
+    height: 127px;
+    background-color:$color_blanco;
+    position: relative;
+    article{
+      p {
+        color:$color_gris_tres;
+        font-weight: bold;
+        padding-left: 19px;
+        padding-top: 16px;
+        font-size: 12px;
+      }
+      span:nth-of-type(1) {
+        display: inline-block;
+        color:$color_gris_tres;
+        font-weight: 400;
+        padding-left: 19px;
+        padding-top: 0px;
+        font-size: 18px;
+      }
+      span:nth-of-type(2) {
+        display: inline-block;
+        color:$color_gris_oscuro_dos;
+        font-weight: bold;
+        padding-top: 0px;
+        font-size: 26px;
+        padding-left: 3px;
+      }
+    }
+  }
+  .link_ver_vuelo{
+    position: absolute;
+    bottom: 19px;
+    right:19px;
+    span{
+      width:100%;
+      text-align: right;
+      color:$color_celeste_dos;
+      display: block;
+    }
+  }
+  @media all and (max-width: 768px){
+    section {
+        width: 95%;
+        .card_info{
+          width:95%;
+          margin: 2.5% auto 2.5% auto;
+      }
+    }
+    h2.titulo_pag{
+        padding-left: 2.5%;
+        padding-top: 20px;
+        padding-bottom: 10px;
+    }
+  }
