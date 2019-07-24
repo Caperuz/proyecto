@@ -1,5 +1,6 @@
 import React from "react"
 import PropTypes from 'prop-types'
+
 const Card = ({ price, imgUrl, link, scale, stayId, description }) => (
     <>
     <div className="card_info">
