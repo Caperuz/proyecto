@@ -9,7 +9,7 @@ function Button() {
             <nav className="menu">
                 <ul>
                     {   
-                        menus.data.allStayDatas && menus.data.allStayDatas.filter (user => user).map ( Renderall => 
+                        menus.data.allStayDatas && menus.data.allStayDatas.filter (user => user).sort((a, b) => a - b).reverse().map ( Renderall => 
                         <Menu key={Renderall.customId} bestPrice={Renderall.bestPrice} customId={Renderall.customId} id={Renderall.id} label={Renderall.label} />
                     )}
                 </ul>
