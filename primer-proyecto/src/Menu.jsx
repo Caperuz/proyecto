@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom'
 
 const Menu = ({bestPrice, customId, label, id }) => (
     <>
-        <li className={customId}>
+        <li>
             <NavLink to={`/viaja/${customId}`} exact activeClassName="activando" data-filter="todos">
                 <div className="todos_los_textos"> 
                     <div className="subtitle-textos titulo_viaja">

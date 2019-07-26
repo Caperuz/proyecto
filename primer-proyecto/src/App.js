@@ -7,7 +7,6 @@ import { BrowserRouter as Router, Route, Switch, } from "react-router-dom"
 import './style.scss';
 const App = () => (
   <Router>
-    <main>
       <Menunav/>
       <Banner/>
       <Button/>
@@ -18,7 +17,6 @@ const App = () => (
           <Route component={() =>( <div className="error"><h2 class="titulo_pag">El vuelo no existe</h2></div> )} />
         </Switch>
       </section>
-    </main>
   </Router>
 )
 export default App;
